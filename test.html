@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<title>upgrouper</title>
+<link rel="stylesheet" href="test.css">
+<script src="dep/jquery-1.5.2.min.js"></script>
+<script src="dep/jquery-ui-1.8.14.custom.min.js"></script>
+<script src="src/upgrouper.js"></script>
+<script>
+$(document).ready(function() {
+    Upgrouper.init();
+
+    // delete the empty grouping
+    $('.groupingwrap p .delete').live('click', function() {
+        $(this).parents('.groupingwrap').remove();
+    });
+
+    // you do these yourself so you can listen to the events "live"
+    $('.groupable .delete').live('click', function() {
+        Upgrouper.confirmDeleteGroupable($(this).parents('.groupable'));
+    });
+    $('.groupable .confirm').live('click', function() {
+        $(this).parents('.groupable').remove();
+    });
+    $('.groupable .cancel').live('click', function() {
+        Upgrouper.cancelDeleteGroupable($(this).parents('.groupable'));
+    });
+    $('.groupable .dismiss').live('click', function() {
+        $(this).parents('.groupable').remove();
+    });
+});
+</script>
+</head>
+<body>
+
+<!--
+<div class="help">
+<p>Drag jpegs, pngs or gifs from your desktop and drop them onto any of the blocks on the left to upload. We'll take care of thumbnailing for you.</p>
+<p>You can also drag and drop your images to sort them.</p>
+</div>
+-->
+
+<div class="wrap">
+<div class="stage">
+
+<div class="groupingwrap" id="unsorted-wrap">
+<!--<h1>Unsorted drafts</h1>-->
+<section>
+<div class="grouping" id="grouping-unsorted"></div>
+<div class="text">
+<p>Drop images here to <b>sort later</b>.</p>
+</div>
+</section>
+</div>
+
+<div class="groupings"></div>
+
+<section class="new-grouping" id="new-grouping">
+<p>Drop images here to <b>create a new grouping</b>.</p>
+</section>
+
+</div> <!-- .stage -->
+</div> <!-- .wrap -->
+
+</body>
+</html>

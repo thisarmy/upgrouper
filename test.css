@@ -1,0 +1,76 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';}
+a, a:link, a:visited, a:active, a:hover {outline: none;}
+
+body {font-size: 13px; line-height: 1.4; font-family: helvetica neue, arial, sans-serif; font-weight: 200; background-color: #f5f4f2; color: #333; }
+
+b {font-weight: bold;}
+i {font-style: italic;}
+
+h1 {text-shadow: #fff 1px 1px 0; font-size: 13px; margin-bottom: 10px; margin-left: 20px; font-weight: normal;}
+
+.wrap {margin: 20px;/* margin-right: 320px;*/}
+.stage {margin: 0 auto; max-width: 694px;}
+/*.help {position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background-color: #fff; border-left: 1px solid #d6d6d6; box-shadow: 0 2px 5px #ccc; overflow: auto;}*/
+.help p {margin: 20px;}
+
+.groupingwrap {margin-bottom: 20px;}
+section {background-color: #fff;}
+.new-grouping {background-color: #ffc;}
+#new-grouping.droppable,
+#grouping-unsorted.droppable,
+div.droppable section {background-color: lightblue;}
+.groupingwrap section, .new-grouping {padding: 20px; padding-bottom: 0; padding-right: 0; border: 1px solid #d6d6d6;  border-radius: 2px; box-shadow: 0 2px 5px #ccc;}
+.groupingwrap section p, .new-grouping p {padding-bottom: 20px; margin-right: 20px; text-align: center;}
+
+.new-grouping,
+.groupingwrap section {min-height: 38px;}
+
+.dragging-files section,
+.dragging-files .new-grouping {background-color: #b3ffc5;}
+
+.no-image {background-color: #f2f2f2; height: 64px; border-radius: 3px;}
+.groupable .error,
+.groupable .confirmation {background-color: #B22222; color: #fff; font-size: 10px; min-height: 64px; border-radius: 3px;}
+.error .text,
+.confirmation .text {padding: 5px; padding-bottom: 0;}
+.error .dismiss,
+.confirmation .dismiss {text-align: center; padding: 5px 0; text-transform: uppercase; font-size: 11px; font-weight: bold; cursor: pointer;}
+.error .dismiss,
+.confirmation .confirm,
+.confirmation .cancel {text-decoration: underline;}
+.error .dismiss:hover,
+.confirmation .confirm:hover,
+.confirmation .cancel:hover {color: #d6d6d6;}
+.filename {margin-top: 5px;}
+
+.sortable-enabled .groupable img {cursor: move; cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;}
+.sortable-enabled div.ui-sortable-helper img {cursor: grabbing; cursor: -moz-grabbing; cursor: -webkit-grabbing;}
+.sortable-disabled .groupable img {cursor: not-allowed;}
+.groupable, .grouping .drop {width: 64px; display: inline-block; margin-right: 20px; margin-bottom: 20px; vertical-align: top;}
+.grouping .drop {background-color: #f2f2f2; border-radius: 3px;}
+
+.grouping:not(:empty) + .text {display: none;}
+
+.groupable {position: relative;}
+.groupable .delete {display: none; position: absolute; top: -10px; right: -10px; width: 28px; height: 28px; text-indent: -10000px; cursor: pointer; background-image: url(delete.png)}
+.groupable:hover .delete {display: block;}
+div.groupable-confirm:hover .delete {display: none;}
+div.groupable-confirm img {display: none;}
+.groupable .progress {position: absolute; left: 0; top: 23px; width: 64px; text-align: center;}
+.groupable .progress .inner {background-color: #222; padding: 3px 5px; color: #fff; font-size: 10px; border-radius: 3px; display: inline-block;}
+
+.groupingwrap .handle {float: right; margin-right: 20px; background-image: url(drag.png); width: 12px; height: 12px; margin-top: 3px; text-indent: -10000px;}
+.groupingwrap .handle {cursor: move; cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;}
+.groupingwrap:only-child .handle {display: none;}
+div.ui-sortable-helper .handle {cursor: grabbing; cursor: -moz-grabbing; cursor: -webkit-grabbing;}
+
+.groupable .filename {display: none;}
+
+.groupingwrap .delete {text-decoration: underline; font-weight: bold; cursor: pointer;}
