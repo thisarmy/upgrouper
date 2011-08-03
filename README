@@ -1,0 +1,23 @@
+UPGROUPER
+=========
+
+A widget for uploading files via drag and drop straight into different
+groupings and then sorting them.
+
+It was made for use with product, page and range images on someammo. See it in
+action on http://someammo.com/.
+
+
+Example
+-------
+
+There's a node and express based test server included. Run it with:
+
+    node server.js
+
+and then visit http://localhost:8080/test.html in your browser.
+
+It deliberately pauses uploads between chunks so that you can test upload
+progress locally and then it creates previews in the media/ subdirectory using
+imagemagick. It then returns some metadata as json so that the frontend can
+represent the thumbnails.
