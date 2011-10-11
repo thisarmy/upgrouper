@@ -33,6 +33,7 @@ return {
         opacity: 0.8,
         revert: 100,
         handle: 'img',
+        tolerance: 'pointer',
         placeholder: 'drop',
         forcePlaceholderSize: true
     },
@@ -126,6 +127,18 @@ return {
                 // dragging must have ended.
                 mouseLeftWindow();
             });
+
+        this.checkForSupport();
+    },
+
+    checkForSupport: function() {
+        var xhr = new XMLHttpRequest();
+        if (!xhr.upload) {
+            this.notSupported();
+        }
+    },
+
+    notSupported: function() {
     },
 
     makeGroupablesSortable: function() {
@@ -133,8 +146,6 @@ return {
         var that = this;
         var settings = $.fn.extend({}, this.groupableSortableSettings, {
             connectWith: this.groupingSelector,
-            tolerance: 'pointer',
-            handle: 'img',
             start: function(event, ui) {
                 $(ui.item).addClass('dragging');
             },
